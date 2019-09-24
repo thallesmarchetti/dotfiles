@@ -35,7 +35,8 @@ if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     require_cask slack
     require_cask spotify
     require_cask skype
-require_cask telegram	
+    require_cask telegram
+    require_cask teamviewer
     require_cask whatsapp
 
     ok "casks installed..."
@@ -50,7 +51,7 @@ if [[ $developerresponse =~ ^(y|yes|Y) ]];then
     require_cask visual-studio-code
     require_cask iterm2
     require_cask android-studio
-    
+
     ok "casks installed..."
 else
     ok "skipped developer tools.";

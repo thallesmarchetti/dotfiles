@@ -19,7 +19,6 @@ fullname=$(osascript -e "long user name of (system info)")
 bot "Hi $fullname. I'm going to make your OSX system better. We're going to:"
 action "install Xcode's command line tools"
 action "install Homebrew and brew cask"
-action "install oh-my-zsh"
 action "install apps"
 action "if you feel like it, we will also install more things"
 
@@ -83,20 +82,6 @@ running "updating homebrew"
 brew update
 brew tap homebrew/versions
 brew tap caskroom/versions
-ok
-
-#####
-# install oh-my-zsh
-#####
-running "checking oh-my-zsh install"
-if [[ $? != 0 ]]; then
-    action "installing oh-my-zsh"
-    $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    if [[ $? != 0 ]]; then
-        error "unable to install oh-my-zsh , framework $0 abort!"
-        exit -1
-    fi
-fi
 ok
 
 ./apps.sh

@@ -34,8 +34,7 @@ fi
 if [[ $unixresponse =~ ^(y|yes|Y) ]];then
     action "install brew packages..."
 
-    require_brew zsh
-    require_brew zsh-completions
+    require_brew bash
     require_brew git
     require_brew wget
     require_brew curl
@@ -59,7 +58,7 @@ else
 fi
 
 if [[ $packagesresponse =~ ^(y|yes|Y) ]];then
-    action "install npm / yarn / pip packages..."
+    action "install npm / yarn..."
 
     function require_gem() {
         running "gem $1"
@@ -71,23 +70,23 @@ if [[ $packagesresponse =~ ^(y|yes|Y) ]];then
         ok
     }
 
-    yarnlist=$(yarn list -g)
-    function require_yarn() {
-        running "yarn $1"
-        echo "$yarnlist" | grep "$1@" > /dev/null
+    npmlist=$(npm list -g)
+    function require_npm() {
+        running "npm $1"
+        echo "$npmlist" | grep "$1@" > /dev/null
         if [[ $? != 0 ]]; then
-            action "yarn global add -g $1"
-            yarn global add -g "$1"
+            action "npm install -g $1"
+            npm install -g "$1"
         fi
         ok
     }
 
-    require_yarn bower
-    require_yarn browser-sync
-    require_yarn browserify
-    require_yarn webpack
-    require_yarn gulp
-    require_yarn eslint
+    require_npm bower
+    require_npm browser-sync
+    require_npm browserify
+    require_npm webpack
+    require_npm gulp
+    require_npm eslint
 
     ok "packages installed..."
 else
