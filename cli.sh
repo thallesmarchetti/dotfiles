@@ -50,6 +50,7 @@ if [[ $runtimesresponse =~ ^(y|yes|Y) ]];then
 
     require_brew node
     require_brew yarn
+    require_brew watchman
     require_brew mysql
 
     ok "packages installed..."
@@ -85,6 +86,7 @@ if [[ $packagesresponse =~ ^(y|yes|Y) ]];then
     require_npm browser-sync
     require_npm browserify
     require_npm webpack
+    require_npm gulp-cli
     require_npm gulp
     require_npm eslint
 
