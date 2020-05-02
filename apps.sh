@@ -28,7 +28,6 @@ bot "Let's go! Make sure to check on your computer regularly in case something n
 if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     action "install brew cask packages..."
 
-	require_cask Franz
     require_cask firefox
     require_cask google-backup-and-sync
     require_cask google-chrome
@@ -38,6 +37,8 @@ if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     require_cask telegram
     require_cask teamviewer
     require_cask whatsapp
+    require_cask microsoft-edge
+    require_cask microsoft-office
 
     ok "casks installed..."
 else
@@ -48,8 +49,10 @@ if [[ $developerresponse =~ ^(y|yes|Y) ]];then
 
     action "install brew cask packages..."
 
-    require_cask visual-studio-code
     require_cask iterm2
+    require_cask postman
+    require_cask visual-studio-code
+    require_cask visual-studio
     require_cask android-studio
 
     ok "casks installed..."
