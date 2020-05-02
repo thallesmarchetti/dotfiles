@@ -21,7 +21,6 @@ action "install Xcode's command line tools"
 action "install Homebrew and brew cask"
 action "install apps"
 action "if you feel like it, we will also install more things"
-
 bot "One more thing: I'll need your password from time to time."
 
 read -r -p "Let's go? [y|N] " response
@@ -80,8 +79,10 @@ ok
 # Make sure we’re using the latest Homebrew
 running "updating homebrew"
 brew update
-brew tap homebrew/versions
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
+rm -rfv /Library/Caches/Homebrew/* > /dev/null 2>&1
+brew tap --repair > /dev/null 2>&1
+
 ok
 
 ./apps.sh
