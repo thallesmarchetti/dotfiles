@@ -52,7 +52,6 @@ if [[ $runtimesresponse =~ ^(y|yes|Y) ]];then
     require_brew yarn
     require_brew watchman
     require_brew adoptopenjdk/openjdk/adoptopenjdk8
-    require_brew mysql
 
     ok "packages installed..."
 else
@@ -84,9 +83,6 @@ if [[ $packagesresponse =~ ^(y|yes|Y) ]];then
     }
 
     require_npm webpack
-    require_npm gulp-cli
-    require_npm gulp
-    require_npm eslint
 
     ok "packages installed..."
 else
