@@ -89,14 +89,6 @@ ok
 
 bot "Woot! All done. If you want to go further, here are some options:"
 
-
-read -r -p "create our zsrhc? [y|N] " zshrc_response
-if [[ $zshrc_response =~ ^(y|yes|Y) ]];then
-    ./zshrc.sh
-else
-    ok "skipped development folder structure.";
-fi
-
 read -r -p "install extra development command-line tools? (node, curl, etc) [y|N] " cli_response
 if [[ $cli_response =~ ^(y|yes|Y) ]];then
     ok "will install command-line tools."
