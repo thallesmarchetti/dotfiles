@@ -8,7 +8,10 @@ sudo echo "ask for password before all the scripts"
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # set .zshrc
-wget -O $HOME/.zshrc https://gist.githubusercontent.com/thallesmarchetti/bb4ed1f801a77fa068e6b738ca1b5b21/raw/63e8ae1325259b8c54cf3bb3cdf8ed64d6f4599a/.zshrc
+wget -O $HOME/.zshrc https://gist.githubusercondottent.com/thallesmarchetti/bb4ed1f801a77fa068e6b738ca1b5b21/raw/63e8ae1325259b8c54cf3bb3cdf8ed64d6f4599a/.zshrc
+
+# set .zshrc_aliases
+wget -0 $ZSH/.zshrc_aliases https://gist.githubusercontent.com/thallesmarchetti/8c57ad14624985612853638ec774099b/raw/ee34431e8476091e0e443bf96614103ddbe9122c/.zshrc_aliases
 
 # install oh-my-zsh plugins
 

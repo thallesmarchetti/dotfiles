@@ -60,7 +60,7 @@ running "checking homebrew install"
 brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
     action "installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [[ $? != 0 ]]; then
         error "unable to install homebrew, script $0 abort!"
         exit -1
@@ -78,7 +78,6 @@ ok
 
 # Make sure we’re using the latest Homebrew
 running "updating homebrew"
-brew update
 brew tap homebrew/cask-versions
 rm -rfv /Library/Caches/Homebrew/* > /dev/null 2>&1
 brew tap --repair > /dev/null 2>&1
