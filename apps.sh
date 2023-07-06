@@ -27,6 +27,8 @@ bot "Let's go! Make sure to check on your computer regularly in case something n
 
 if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     action "install brew cask packages..."
+    require_cask authy
+    require_cask enpass
     require_cask google-chrome
     require_cask google-drive
     require_cask slack
@@ -48,7 +50,6 @@ if [[ $developerresponse =~ ^(y|yes|Y) ]];then
     action "install brew cask packages..."
 
     require_cask iterm2
-    require_cask adobe-creative-cloud
     require_cask postman
     require_cask visual-studio-code
     require_cask android-studio
