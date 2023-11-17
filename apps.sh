@@ -29,8 +29,6 @@ if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     action "install brew cask packages..."
     require_cask authy
     require_cask enpass
-    require_cask google-chrome
-    require_cask google-drive
     require_cask slack
     require_cask spotify
     require_cask teamviewer
