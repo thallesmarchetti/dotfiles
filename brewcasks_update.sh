@@ -1,0 +1,1 @@
+brew list --cask | xargs brew upgrade --cask
