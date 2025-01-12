@@ -11,7 +11,7 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 wget -O $HOME/.zshrc https://gist.githubusercontent.com/thallesmarchetti/bb4ed1f801a77fa068e6b738ca1b5b21/raw/5090f14608f8245b8913e3134fd108a5c2c3147b/.zshrc
 
 # set .zshrc_aliases
-wget -O $ZSH/.zshrc_aliases https://gist.githubusercontent.com/thallesmarchetti/8c57ad14624985612853638ec774099b/raw/ee34431e8476091e0e443bf96614103ddbe9122c/.zshrc_aliases
+wget -O $ZSH/.zshrc_aliases https://gist.githubusercontent.com/thallesmarchetti/8c57ad14624985612853638ec774099b/raw/ee7822416d6e4717229406d63fcc1c5b481323f8/.zshrc_aliases
 
 # install oh-my-zsh plugins
 
