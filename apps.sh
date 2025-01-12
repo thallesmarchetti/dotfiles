@@ -27,13 +27,10 @@ bot "Let's go! Make sure to check on your computer regularly in case something n
 
 if [[ $everydayresponse =~ ^(y|yes|Y) ]];then
     action "install brew cask packages..."
-    require_cask authy
-    require_cask enpass
     require_cask slack
     require_cask spotify
     require_cask teamviewer
     require_cask whatsapp
-    require_cask zoom
     require_cask microsoft-edge
     require_cask microsoft-teams
     require_cask microsoft-office

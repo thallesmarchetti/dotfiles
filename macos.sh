@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
+echo 'Configuring your mac. Hang tight.'
 osascript -e 'tell application "System Preferences" to quit'
+
 
 # Ask for the administrator password upfront
 sudo -v
@@ -14,11 +18,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set the timezone (see `sudo systemsetup -listtimezones` for other values)
-sudo systemsetup -settimezone "Australia/Brisbane" > /dev/null
-
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# Hide remaining battery time; show percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
